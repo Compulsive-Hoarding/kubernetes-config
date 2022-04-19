@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: rater
+  name: rater
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rater
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: rater
+    spec:
+      containers:
+      - image: denisratenok/ch-rater
+        name: ch-rater
+        env:
+          - name: JWK_SET_URI
+            value: "http://keycloak:8080/realms/hoarding/protocol/openid-connect/certs"
+        ports:
+        - containerPort: 8081
+        readinessProbe:
+          httpGet:
+            path: /hello
+            port: 8081
