@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rater
+data:
+  NEO4J_URI: "TODO UPDATE"
+  NEO4J_USERNAME: neo4j
+  NEO4J_PASSWORD: "TODO UPDATE"
+  JWK_SET_URI: http://keycloak:8080/realms/hoarding/protocol/openid-connect/certs

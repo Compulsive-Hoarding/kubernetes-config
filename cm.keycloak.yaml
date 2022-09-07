@@ -5,5 +5,6 @@ metadata:
 data:
   KC_CACHE_STACK: kubernetes
   JAVA_OPTS_APPEND: "-Djgroups.dns.query=keycloak-headless"
-  KC_DB_URL: jdbc:postgresql://35.228.136.66:5432/keycloak
-  KC_DB_USERNAME: postgres
+  KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
+  KC_DB_USERNAME: admin
+  KC_DB_PASSWORD: "0000"

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: keycloak
-          image: quay.io/keycloak/keycloak:17.0.1
+          image: quay.io/keycloak/keycloak:19.0.1
           args:
             - start
             - --auto-build
@@ -28,12 +28,12 @@ spec:
             - name: KEYCLOAK_ADMIN
               value: "admin"
             - name: KEYCLOAK_ADMIN_PASSWORD
-              value: "admin"
+              value: "0000"
           envFrom:
             - configMapRef:
                 name: keycloak
-            - secretRef:
-                name: keycloak
+#            - secretRef:
+#                name: keycloak
           ports:
             - name: http
               containerPort: 8080

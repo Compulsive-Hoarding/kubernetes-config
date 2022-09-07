@@ -1,3 +1,4 @@
 Use:
-1. Run ```kubectl create secret generic keycloak --from-literal=KC_DB_PASSWORD=<DB_PASSWORD> --from-literal=KEYCLOAK_ADMIN_PASSWORD=<KEYCLOAK_ADMIN_PASSWORD>```
-2. Run kubectl apply -f kubernetes-config/
+1. Run Neo4j
+2. Run update configMaps with neo4j credentials
+3. Run kubectl apply -f kubernetes-config/
